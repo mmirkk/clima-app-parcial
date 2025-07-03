@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ClimaApp</title>
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+            integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+            crossorigin=""
+        />
+        <link rel="stylesheet" href="/src/css/style.css" />
+        <link rel="icon" type="image/x-icon" href="/icons/favicon.ico"/>
+    </head>
+    <body>
+        <header class="app-header">
+            <div class="header-section header-left">
+                <img src="/logos/logo.png" alt="Logo" class="app-logo" />
+            </div>
+            <div class="header-section header-center">
+                <div class="search-container">
+                    <form id="searchForm">
+                        <img
+                            src="/icons/magnifier.svg"
+                            alt="Lupa"
+                            class="search-icon magnifier-icon"
+                        />
+                        <input
+                            type="text"
+                            id="cityInput"
+                            placeholder="Buscar ciudad y presionar Enter..."
+                            required
+                        />
+                        <img
+                            src="/icons/pinlocation.svg"
+                            alt="Buscar en mapa"
+                            class="search-icon pin-icon"
+                            id="map-pin-icon"
+                            title="Buscar en el mapa"
+                        />
+                    </form>
+                </div>
+            </div>
+            <div class="header-section header-right">
+                <div class="filter-container">
+                    <select id="weatherFilter">
+                        <option value="all">Todos los climas</option>
+                        <option value="Clear">Soleado</option>
+                        <option value="Clouds">Nublado</option>
+                        <option value="Rain">Lluvia</option>
+                        <option value="Drizzle">Llovizna</option>
+                        <option value="Thunderstorm">Tormenta</option>
+                        <option value="Snow">Nieve</option>
+                    </select>
+                </div>
+            </div>
+        </header>
+        <main class="app-container">
+            <div id="loader"></div>
+            <div id="hero-section"></div>
+            <div id="locationsGrid" class="locations-grid"></div>
+            <div id="loader" style="display: none;"></div>
+            <div id="locationsGrid" class="locations-grid"></div>
+        </main>
+        <div id="map-modal" class="map-modal-overlay hidden">
+            <div class="map-modal-content">
+                <button id="close-map-btn" class="close-map-btn">&times;</button>
+                <h3>Selecciona una ubicación haciendo click</h3>
+                <div id="map"></div>
+            </div>
+        </div>
+        <script
+            src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""
+        ></script>
+        <script type="module" src="/src/js/main.js"></script>
+        <button
+            class="alert-button"
+            id="alertButton"
+            title="Alerta meteorológica"
+        >
+            <img src="/icons/alert.svg" alt="Alerta" />
+        </button>
+    </body>
+</html>

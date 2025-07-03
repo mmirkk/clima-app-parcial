@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Detalles del Clima</title>
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+            integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+            crossorigin=""
+        />
+        <link rel="stylesheet" href="/src/css/style.css" />
+        <link rel="icon" type="image/x-icon" href="/icons/favicon.ico"/>
+        <script src="https://js.puter.com/v2/"></script>
+    </head>
+    <body>
+        <div id="page-fade-overlay"></div>
+        <header class="app-header">
+            <div class="header-section header-left">
+                <a href="/" class="back-button" title="Volver al Dashboard">
+                    <img src="/icons/arrow-back.svg" alt="Volver" />
+                </a>
+            </div>
+            <div class="header-section header-right">
+                <img src="/logos/logo.png" alt="Logo" class="app-logo" />
+            </div>
+        </header>
+        <main class="app-container">
+            <div id="loader"></div>
+            <div id="details-content" class="details-layout"></div>
+        </main>
+        <script type="module" src="/src/js/detalles.js"></script>
+    </body>
+</html>
